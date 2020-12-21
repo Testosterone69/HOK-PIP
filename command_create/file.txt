@@ -1,0 +1,85 @@
+	create backend
+mkdir backend
+cd backend
+go mod init github.com/Haiserest/app
+
+	install entc 0.2.7
+go get github.com/facebookincubator/ent/cmd/entc@v0.2.7
+
+	create shema
+entc init User
+]============================================================
+package schema
+ 
+import (
+   "github.com/facebookincubator/ent"
+   "github.com/facebookincubator/ent/schema/field"
+)
+ 
+// User holds the schema definition for the User entity.
+type User struct {
+   ent.Schema
+}
+ 
+// Fields of the User.
+func (User) Fields() []ent.Field {
+   return []ent.Field{
+       field.Int("age").Positive(),
+       field.String("name").NotEmpty(),
+   }
+}
+ 
+// Edges of the User.
+func (User) Edges() []ent.Edge {
+   return nil
+}
+
+============================================================
+entc generate ./ent/schema
+
+	create controller
+mkdir controllers
+												
+// create file --> user_controller.go
+					main.go
+
+	install swag
+go get -u github.com/swaggo/swag/cmd/swag
+go get -u github.com/swaggo/swag/cmd/swag@v1.6.7
+swag init
+
+	download dependency
+go mod tidy
+
+	complier
+go build -o main.exe main.go
+.\main.exe
+
+
+	check schema
+entc describe ./ent/schema
+
+///////////////////////////////////////////////////////////////
+	create frontend
+git clone ......
+npm install -g npm@latest	
+
+cd frontend
+yarn start
+
+test @localhost3000
+
+	create API
+npx @openapitools/openapi-generator-cli@1.0.15-4.3.1 generate -g typescript-fetch -i ../backend/docs/swagger.yaml -o ./plugins/welcome/src/api
+
+edit --> Welcompage.tsx
+create component/folder --> Table(index.ts,Tables.tsx)
+				 Users(index.ts,Create.tsx)
+edit --> Plugin.ts
+
+	complier frontend
+yarn start
+
+
+
+

@@ -1,0 +1,40 @@
+git clone git@github.com:<respons>/team..
+
+git remote update
+git pull origin main
+
+git status 
+	//check branch
+git checkout -b <branch>
+
+git add .....
+
+git commit -m " ............. -close "
+
+git push origin <branch>
+
+=========================================================
+
+PS C:\Team07\Team07\backend> git commit -m "Create4 Car Register -close #22"
+[issue-22 487bc4b] Create4 Car Register -close #22
+ 1 file changed, 1 deletion(-)
+To github.com:sut63/team07
+ ! [rejected]        issue-22 -> issue-22 (non-fast-forward)
+error: failed to push some refs to 'github.com:sut63/team07'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+error git push
+
+	git pull --rebase
+
+	git push -f origin <branch>
+
+	git remote update
+
+	git rebase origin/main
+
+	git push origin <branch>
+	
